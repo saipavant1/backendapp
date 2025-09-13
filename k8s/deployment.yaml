@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backendappnodejs
+  name: backendappnodejs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backendappnodejs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: backendappnodejs
+    spec:
+      containers:
+      - image: saipavant/counterapp:latest
+        name: counterapp
+        ports: 
+          - containerPort: 3000 
+        resources: {}
+status: {}
